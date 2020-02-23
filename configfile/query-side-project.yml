@@ -1,0 +1,109 @@
+info:
+  app:
+    name: Project service - Query Side
+    description: Project service - Query Side (CQRS)
+
+    
+management:
+  security: 
+    enabled: false
+
+server:
+  port: ${PORT:8083}
+    
+logging:
+  level:
+    root: INFO
+    org.springframework: INFO
+    org.axonframework: DEBUG
+    com.idugalic: DEBUG
+
+spring:
+  application:
+    exchange: project.events.fanout.exchange
+    queue: project.view.event.stream
+    terminal: project.axon.terminal
+  rabbitmq:
+    hostname: 127.0.0.1
+    username: guest
+    password: guest
+
+  data:
+    mongodb:
+      uri: ${vcap.services.mongo.credentials.uri:mongodb://127.0.0.1:27017}/projects
+
+      
+security:
+  oauth2:
+    resource:
+      jwt:
+        keyUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/token_key
+        keyValue: |
+          -----BEGIN PUBLIC KEY-----
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnGp/Q5lh0P8nPL21oMMrt2RrkT9AW5jgYwLfSUnJVc9G6uR3cXRRDCjHqWU5WYwivcF180A6CWp/ireQFFBNowgc5XaA0kPpzEtgsA5YsNX7iSnUibB004iBTfU9hZ2Rbsc8cWqynT0RyN4TP1RYVSeVKvMQk4GT1r7JCEC+TNu1ELmbNwMQyzKjsfBXyIOCFU/E94ktvsTZUHF4Oq44DBylCDsS1k7/sfZC2G5EU7Oz0mhG8+Uz6MSEQHtoIi6mc8u64Rwi3Z3tscuWG2ShtsUFuNSAFNkY7LkLn+/hxLCu2bNISMaESa8dG22CIMuIeRLVcAmEWEWH5EEforTg+QIDAQAB
+          -----END PUBLIC KEY-----
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${vcap.services.registry.credentials.uri:http://localhost:8761}/eureka/
+
+      
+# The OAuth2 server definition that would be used to send the authorization requests to
+authserver:
+  hostname: localhost
+  port: 9999
+  contextPath: uaa
+
+
+---
+spring:
+  profiles: docker
+  rabbitmq:
+    hostname: my-rabbit
+    username: test
+    password: password
+  data:
+    mongodb:
+      uri: mongodb://my-mongo:27017/projects
+
+
+eureka:
+# Register our microservices to Eureka using hostnames in a Docker environment will not work, they will all get 
+# one and the same hostname. Instead we configure them to use its IP address during registration with Eureka.
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://registry:8761/eureka/
+      
+authserver:
+  hostname: authserver
+  port: 9999
+  contextPath: uaa
+
+
+---
+spring:
+  profiles: cloud
+  jpa:
+    database:
+    show-sql: true
+    hibernate:
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+
+
+authserver:
+  hostname: ${vcap.services.authserver.credentials.uri}
+  port: 80
+  contextPath: uaa
+  
+eureka:
+  instance:
+    hostname: ${vcap.application.uris[0]}
+    nonSecurePort: 80
