@@ -10,7 +10,7 @@
 
 	<parent>
 		<groupId>com.idugalic</groupId>
-		<artifactId>microservices-company-parent</artifactId>
+		<artifactId>micro-company-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
