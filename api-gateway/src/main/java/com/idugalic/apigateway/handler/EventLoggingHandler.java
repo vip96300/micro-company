@@ -44,7 +44,7 @@ public class EventLoggingHandler {
     }
 
     @EventHandler
-    public void handleBlogPublis(BlogPostPublishedEvent event) {
+    public void handleBlogPublish(BlogPostPublishedEvent event) {
         publish(event.getAuditEntry().getWho(), event, "/queue/blog");
     }
 
