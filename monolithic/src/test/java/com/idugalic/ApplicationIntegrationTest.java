@@ -23,7 +23,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Integration test for {@link Application} starting on a random port.
+ * Integration test for {@link MonolithicApplication} starting on a random port.
  * 
  * @author idugalic
  *

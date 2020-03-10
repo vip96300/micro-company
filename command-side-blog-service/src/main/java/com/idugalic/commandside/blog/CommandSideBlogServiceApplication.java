@@ -13,12 +13,12 @@ import org.springframework.core.env.Environment;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class Application {
+public class CommandSideBlogServiceApplication {
 
-    private static final Logger LOG = LoggerFactory.getLogger(Application.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CommandSideBlogServiceApplication.class);
 
     public static void main(String... args) throws UnknownHostException {
-        SpringApplication app = new SpringApplication(Application.class);
+        SpringApplication app = new SpringApplication(CommandSideBlogServiceApplication.class);
         Environment env = app.run(args).getEnvironment();
         LOG.info("\n----------------------------------------------------------\n\t" +
                 "Application '{}' is running! Access URLs:\n\t" +

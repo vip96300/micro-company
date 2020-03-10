@@ -9,9 +9,9 @@ import de.codecentric.boot.admin.config.EnableAdminServer;
 @SpringBootApplication
 @EnableAdminServer
 @EnableDiscoveryClient
-public class Application {
+public class AdminServerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(AdminServerApplication.class, args);
     }
 }

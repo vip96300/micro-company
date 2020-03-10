@@ -1,4 +1,4 @@
-package com.idugalic.queryside.blog;
+package com.idugalic.queryside.project;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,9 +10,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class Application {
+public class QuerySideProjectServiceApplication {
     public static void main(String... args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(QuerySideProjectServiceApplication.class, args);
     }
 
     @Bean
