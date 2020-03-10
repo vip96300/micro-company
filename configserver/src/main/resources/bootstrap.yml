@@ -6,7 +6,7 @@ spring:
       enabled: true
       server:
         git:
-          uri: https://github.com/vip96300/micro-company.git
+          uri: https://github.com/vip96300/micro-company
           label: master
           search-paths: configfile
           username: vip96300@163.com
