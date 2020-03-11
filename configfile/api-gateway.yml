@@ -14,9 +14,9 @@ server:
 
 # The OAuth2 server definition that would be used to send the authorization requests to
 authserver:
-    hostname: localhost
-    port: 9999
-    contextPath: uaa
+  hostname: localhost
+  port: 9999
+  contextPath: uaa
     
 # Define the routes which determine what URL are serviced by what applications.
 # The application/services are defined in the bootstrap.yml file of individual applications
