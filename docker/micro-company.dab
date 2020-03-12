@@ -1,9 +1,9 @@
 {
   "Services": {
-    "adminserver": {
+    "admin-server": {
       "Command": [
         "./wait-for-it.sh", 
-        "configserver:8888", 
+        ":8888",
         "-t", 
         "60", 
         "--", 
@@ -12,7 +12,7 @@
         "-jar", 
         "/app.jar"
       ], 
-      "Image": "idugalic/adminserver@sha256:adfd79f32be7a8ba81bd3fbe777565ed734cd7bdb1be8fa9635078c44b2833bd", 
+      "Image": "idugalic/admin-server@sha256:adfd79f32be7a8ba81bd3fbe777565ed734cd7bdb1be8fa9635078c44b2833bd",
       "Networks": [
         "default"
       ], 
@@ -26,7 +26,7 @@
     "api-gateway": {
       "Command": [
         "./wait-for-it.sh", 
-        "configserver:8888", 
+        ":8888",
         "-t", 
         "60", 
         "--", 
@@ -46,10 +46,10 @@
         }
       ]
     }, 
-    "authserver": {
+    "auth-server": {
       "Command": [
         "./wait-for-it.sh", 
-        "configserver:8888", 
+        ":8888",
         "-t", 
         "60", 
         "--", 
@@ -58,7 +58,7 @@
         "-jar", 
         "/app.jar"
       ], 
-      "Image": "idugalic/authserver@sha256:a0f430cba9a60eb66d29924062765b258af429a9ea7d023c5a21bb064c47cc68", 
+      "Image": "idugalic/auth-server@sha256:a0f430cba9a60eb66d29924062765b258af429a9ea7d023c5a21bb064c47cc68",
       "Networks": [
         "default"
       ], 
@@ -72,7 +72,7 @@
     "circuit-breaker": {
       "Command": [
         "./wait-for-it.sh", 
-        "configserver:8888", 
+        ":8888",
         "-t", 
         "60", 
         "--", 
@@ -95,7 +95,7 @@
     "command-side-blog": {
       "Command": [
         "./wait-for-it.sh", 
-        "configserver:8888", 
+        ":8888",
         "-t", 
         "60", 
         "--", 
@@ -118,7 +118,7 @@
     "command-side-project": {
       "Command": [
         "./wait-for-it.sh", 
-        "configserver:8888", 
+        ":8888",
         "-t", 
         "60", 
         "--", 
@@ -138,8 +138,8 @@
         }
       ]
     }, 
-    "configserver": {
-      "Image": "idugalic/configserver@sha256:c8d678802d021875419609ae3428e2cb83316ffaffd5c3f8d0551acb1fbabd24", 
+    "": {
+      "Image": "idugalic/@sha256:c8d678802d021875419609ae3428e2cb83316ffaffd5c3f8d0551acb1fbabd24",
       "Networks": [
         "default"
       ], 
@@ -174,7 +174,7 @@
     "query-side-blog": {
       "Command": [
         "./wait-for-it.sh", 
-        "configserver:8888", 
+        ":8888",
         "-t", 
         "60", 
         "--", 
@@ -197,7 +197,7 @@
     "query-side-project": {
       "Command": [
         "./wait-for-it.sh", 
-        "configserver:8888", 
+        ":8888",
         "-t", 
         "60", 
         "--", 
@@ -220,7 +220,7 @@
     "registry": {
       "Command": [
         "./wait-for-it.sh", 
-        "configserver:8888", 
+        ":8888",
         "-t", 
         "60", 
         "--", 

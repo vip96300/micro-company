@@ -5,8 +5,8 @@ applications:
   host: api-gateway
   domain: local.pcfdev.io
   services:
-  - configserver
+  -
   - registry
-  - authserver
+  - auth-server
   - mysql
   - rabbit

@@ -5,12 +5,10 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>common-blog</artifactId>
 	<packaging>jar</packaging>
-	<name>common-blog</name>
-	<description>Common-Blog project</description>
 
 	<parent>
 		<groupId>com.idugalic</groupId>
-		<artifactId>micro-company-parent</artifactId>
+		<artifactId>micro-service-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 

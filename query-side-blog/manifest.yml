@@ -1,12 +1,12 @@
 ---
 applications:
-- name: query-side-project
+- name: query-side-blog
   memory: 768M
-  host: query-side-project
+  host: query-side-blog
   domain: local.pcfdev.io
   services:
-  - configserver
+  -
   - registry
-  - authserver
+  - auth-server
   - mysql
   - rabbit

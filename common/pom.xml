@@ -5,12 +5,10 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>common</artifactId>
 	<packaging>jar</packaging>
-	<name>common</name>
-	<description>Common project</description>
 
 	<parent>
 		<groupId>com.idugalic</groupId>
-		<artifactId>micro-company-parent</artifactId>
+		<artifactId>micro-service-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 

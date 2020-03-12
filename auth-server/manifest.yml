@@ -1,6 +1,8 @@
 ---
 applications:
-- name: configserver
+- name: auth-server
   memory: 768M
-  host: configserver
+  host: auth-server
   domain: local.pcfdev.io
+  services:
+  -

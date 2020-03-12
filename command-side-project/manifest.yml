@@ -1,12 +1,12 @@
 ---
 applications:
-- name: command-side-blog
+- name: command-side-project
   memory: 768M
-  host: command-side-blog
+  host: command-side-project
   domain: local.pcfdev.io
   services:
-  - configserver
+  -
   - registry
-  - authserver
+  - auth-server
   - mysql
   - rabbit

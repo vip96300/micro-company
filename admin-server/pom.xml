@@ -3,9 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>adminserver</artifactId>
-	<name>Admin Server</name>
-	<description>Admin Server</description>
+	<artifactId>admin-server</artifactId>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -13,6 +11,7 @@
 		<version>1.3.3.RELEASE</version>
 		<relativePath />
 	</parent>
+
 	<properties>
 		<main.basedir>${basedir}</main.basedir>
 		<spring-boot.version>1.3.3.RELEASE</spring-boot.version>
@@ -26,8 +25,8 @@
 		<docker.image.prefix>idugalic</docker.image.prefix>
 		<docker.plugin.version>0.4.9</docker.plugin.version>
 		<java.version>1.8</java.version>
-
 	</properties>
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>

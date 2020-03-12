@@ -1,8 +1,9 @@
 spring:
   application:
-    name: registry
+    name: admin-server
   cloud:
     config:
+      enabled: true
       uri: ${vcap.services..credentials.uri:http://localhost:8888}
       
 ---
@@ -13,4 +14,3 @@ spring:
      config:
         uri: http://:8888
         fail-fast: true
-        

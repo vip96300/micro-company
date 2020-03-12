@@ -35,7 +35,7 @@ docker swarm join --token $jointoken $(docker-machine ip swmaster):2377
 
 
 # Create Bundle from compose file
-# docker-compose pull adminserver api-gateway authserver circuit-breaker command-side-blog command-side-project configserver query-side-blog query-side-project registry my-rabbit my-mongo
+# docker-compose pull admin-server api-gateway auth-server circuit-breaker command-side-blog command-side-project  query-side-blog query-side-project registry my-rabbit my-mongo
 # docker-compose bundle -o micro-company.dab
 
 #List all nodes

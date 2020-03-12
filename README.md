@@ -81,7 +81,7 @@ The microservice architectural style is an approach to developing a single appli
 
 Microservices enable businesses to innovate faster and stay ahead of the competition. But one major challenge with the microservices architecture is the management of distributed data. Each microservice has its own private database. It is difficult to implement business transactions that maintain data consistency across multiple services as well as queries that retrieve data from multiple services.
 
-![Microservice Architecture - Ivan Dugalic](micro-company.PNG)
+![Microservice Architecture - Ivan Dugalic](micro-service.PNG)
 
 ### Patterns and techniques:
 
@@ -302,9 +302,9 @@ Run services on local workstation with PCF Dev
 - Download and install PCF: https://pivotal.io/platform/pcf-tutorials/getting-started-with-pivotal-cloud-foundry-dev/introduction
 - Start PCF Dev: `$ cf dev start -m 8192 `
 - Login to PCF Dev" `$ cf login -a https://api.local.pcfdev.io --skip-ssl-validation -u admin -p admin -o pcfdev-org`
-- Create user service - configserver: `$ cf cups configserver -p '{"uri":"http://configserver.local.pcfdev.io"}'`
+- Create user service - : `$ cf cups  -p '{"uri":"http://.local.pcfdev.io"}'`
 - Create user service - registry: `$ cf cups registry -p '{"uri":"http://registry.local.pcfdev.io"}'`
-- Create user service - authserver: `$ cf cups authserver -p '{"uri":"http://authserver.local.pcfdev.io"}'`
+- Create user service - auth-server: `$ cf cups auth-server -p '{"uri":"http://auth-server.local.pcfdev.io"}'`
 - Create cloud foundry service instance - mysql: `$ cf create-service p-mysql 512mb mysql`
 - Create cloud foundry service instance - rabbit: `$ cf create-service p-rabbitmq standard rabbit`
 - Open your browser and point to https://local.pcfdev.io. Explore !
@@ -316,15 +316,15 @@ Push microservices in command line:
 ```bash
 $ cd micro-company/
 $ mvn clean install
-$ cf push -f configserver/manifest.yml -p configserver/target/configserver-0.0.1-SNAPSHOT.jar
+$ cf push -f /manifest.yml -p /target/-0.0.1-SNAPSHOT.jar
 $ cf push -f registry/manifest.yml -p registry/target/registry-0.0.1-SNAPSHOT.jar
-$ cf push -f authserver/manifest.yml -p authserver/target/authserver-0.0.1-SNAPSHOT.jar
+$ cf push -f auth-server/manifest.yml -p auth-server/target/auth-server-0.0.1-SNAPSHOT.jar
 $ cf push -f command-side-blog-service/manifest.yml -p command-side-blog-service/target/command-side-blog-service-0.0.1-SNAPSHOT.jar
 $ cf push -f command-side-project-service/manifest.yml -p command-side-project-service/target/command-side-project-service-0.0.1-SNAPSHOT.jar
 $ cf push -f query-side-blog-service/manifest.yml -p query-side-blog-service/target/query-side-blog-service-0.0.1-SNAPSHOT.jar
 $ cf push -f query-side-project-service/manifest.yml -p query-side-project-service/target/query-side-project-service-0.0.1-SNAPSHOT.jar
 $ cf push -f api-gateway/manifest.yml -p api-gateway/target/api-gateway-0.0.1-SNAPSHOT.jar
-$ cf push -f adminserver/manifest.yml -p adminserver/target/adminserver-1.3.3.RELEASE.jar
+$ cf push -f admin-server/manifest.yml -p admin-server/target/admin-server-1.3.3.RELEASE.jar
 
 ```
 
@@ -335,7 +335,7 @@ Push microservices with 'Boot Dashboard':
 - Once you are connected, start dragging the projects to this instance.
 
 
-NOTE: Please run 'configserver' first, followed by 'registry' and other services.
+NOTE: Please run '' first, followed by 'registry' and other services.
 
 ### Issuing Commands & Queries with CURL
 

@@ -5,12 +5,10 @@
 
 	<artifactId>documentation</artifactId>
 	<packaging>jar</packaging>
-	<name>documentation</name>
-	<description>Documentation and diagrams for my-company</description>
 
 	<parent>
 		<groupId>com.idugalic</groupId>
-		<artifactId>micro-company-parent</artifactId>
+		<artifactId>micro-service-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 

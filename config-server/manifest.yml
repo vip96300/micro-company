@@ -1,8 +1,6 @@
 ---
 applications:
-- name: registry
+- name:
   memory: 768M
-  host: registry
+  host:
   domain: local.pcfdev.io
-  services:
-  -

@@ -3,13 +3,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>authserver</artifactId>
-	<name>Authorization server</name>
-	<description>Authorization server</description>
+	<artifactId>auth-server</artifactId>
 
 	<parent>
 		<groupId>com.idugalic</groupId>
-		<artifactId>micro-company-parent</artifactId>
+		<artifactId>micro-service-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<dependencies>
