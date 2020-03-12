@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.idugalic</groupId>
-	<artifactId>micro-service-parent</artifactId>
+	<artifactId>micro-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>micro-service-parent</name>
-	<description>Microservices company - Parent</description>
+	<description>Microservices service - Parent</description>
 
 	<modules>
 		<module>common</module>
