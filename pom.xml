@@ -8,7 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>micro-service-parent</name>
+	<name>micro-service</name>
 	<description>Microservices service - Parent</description>
 
 	<modules>

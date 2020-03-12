@@ -8,7 +8,7 @@
 
 	<parent>
 		<groupId>com.idugalic</groupId>
-		<artifactId>micro-service-parent</artifactId>
+		<artifactId>micro-service</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
